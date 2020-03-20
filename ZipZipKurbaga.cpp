@@ -46,10 +46,6 @@ long long recursiveFunction( int n)
 	}
 
 
-/* Yinelemeli olarak zip zip kurbaganin kac farkli yoldan gittigini bulan fonksiyondur.
- * Bu fonksiyon icinde for ve while dongusu kullanilmalidir.
- * Bu fonksiyon icinde baska bir fonksiyona (kendisi dahil) cagri yapilamaz.
- */
 long long iterativeFunction( int _n)
 {
 	if (_n <= 1)//fonksiyonun algoritmasi ilk 3 terimden sonra basladigi icin ( kendiden onceki 3 fonksiyonun toplami)
