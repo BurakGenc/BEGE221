@@ -1,7 +1,7 @@
 /*zip zipr kurbaga 
-Zıp zıp kurbağa bir nehri karşıdan karşıya geçmek istemektedir. Nehrin iki kenarı arasında N adet taş vardır. Kurbağa
-sadece ileri doğru ve tek bir seferde rastgele olarak 1, 2 veya 3 sonraki taşa zıplamaktadır. N adet taş verildiğinde nehrin
-bir kenarından diğer kenarına kaç farklı şekilde ulaşabileceği bulan program.
+ZÄ±p zÄ±p kurbaÄŸa bir nehri karÅŸÄ±dan karÅŸÄ±ya geÃ§mek istemektedir. Nehrin iki kenarÄ± arasÄ±nda N adet taÅŸ vardÄ±r. KurbaÄŸa
+sadece ileri doÄŸru ve tek bir seferde rastgele olarak 1, 2 veya 3 sonraki taÅŸa zÄ±plamaktadÄ±r. N adet taÅŸ verildiÄŸinde nehrin
+bir kenarÄ±ndan diÄŸer kenarÄ±na kaÃ§ farklÄ± ÅŸekilde ulaÅŸabileceÄŸi bulan program.
 
 @Burakgenc
 */
@@ -12,13 +12,13 @@ bir kenarından diğer kenarına kaç farklı şekilde ulaşabileceği bulan program.
 #include <chrono>
 
 using namespace std;
-int arr[1000];//Memoization icin array
+long long int arr[1000];//Memoization icin array
 
 #define _TEST_ITERATIVE_
 #define _TEST_RECURSIVE_
 
 
-long long recursiveFunction(int n)
+long long recursiveFunction( int n)
 
 	{
 	
@@ -39,7 +39,7 @@ long long recursiveFunction(int n)
 			return arr[n];
 		}
 		else {
-			arr[n] = recursiveFunction(n - 1) + recursiveFunction(n - 2)+recursiveFunction(n - 3);//her bir sonuc diziye atanarak geri dondüste ayni hesabi 
+			arr[n] = recursiveFunction(n - 1) + recursiveFunction(n - 2)+recursiveFunction(n - 3);//her bir sonuc diziye atanarak geri dondÃ¼ste ayni hesabi 
 			                                                                                                                                                                          // yapmamiza gerek kalmaz ve daha hizli sonuc elde ederiz
 			return arr[n];
 		}
@@ -50,7 +50,7 @@ long long recursiveFunction(int n)
  * Bu fonksiyon icinde for ve while dongusu kullanilmalidir.
  * Bu fonksiyon icinde baska bir fonksiyona (kendisi dahil) cagri yapilamaz.
  */
-long long iterativeFunction(int _n)
+long long iterativeFunction( int _n)
 {
 	if (_n <= 1)//fonksiyonun algoritmasi ilk 3 terimden sonra basladigi icin ( kendiden onceki 3 fonksiyonun toplami)
 		return _n;//ilk 3 terimde degerleri kendim atadim
@@ -64,7 +64,7 @@ long long iterativeFunction(int _n)
 
 	}
 	else {
-		int x=1, y=2, z=4,toplam=0;
+		long long int x=1, y=2, z=4,toplam=0;
 		for (int i = 4; i <= _n; i++)
 		{
 			toplam = x + y + z;
